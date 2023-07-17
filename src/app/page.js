@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="flex flex-col justify-between items-center place-content-center h-screen gap-x-8">
       <Header />
-      <div className='flex flex-row items-center place-content-center gap-x-8'>
+      <div className='flex flex-row items-center place-content-center gap-x-8 text-2xl'>
         <div>
           <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
             <span>
@@ -26,16 +26,16 @@ export default function Home() {
           Freelanccer and Ex-Associate 2 @ PwC
         </div>
         <ul className='gap-y-2'>
-          <li>Tech Enthusiast</li>
-          <li>Based in India</li>
-          <li>Coffee Lover</li>
-          <li>ayushkedia1990@gmail.com</li>
+          <li>👨‍💻 Tech Enthusiast</li>
+          <li>🌏 Based in India</li>
+          <li>☕️ Coffee Lover</li>
+          <li>📧 ayushkedia1990@gmail.com</li>
         </ul>
         <div className='flex flex-row gap-x-2'>
-          <a>Linkedin</a>
-          <a>Github</a>
-          <a>Leetcode</a>
-          <a>Instagram</a>
+          <Image src='/../public/linkedin.PNG' width={50} height={50} alt={'linkedin logo'} href='https://www.linkedin.com/in/cypherpoll0/' />
+          <Image src='/../public/github.PNG' width={50} height={50} alt={'github logo'} href='https://github.com/cypherpoll-0' />
+          <Image src='/../public/leetcode.PNG' width={50} height={50} alt={'leetcode logo'} href='https://github.com/cypherpoll-0' />
+          <Image src='/../public/instagram.PNG' width={50} height={50} alt={'instagram logo'} />
         </div>
         </div>
         </div>
