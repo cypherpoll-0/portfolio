@@ -1,45 +1,71 @@
-import Image from 'next/image'
-import Header from './header'
-import Footer from './footer'
+import Image from "next/image";
+import Header from "./header";
+import Footer from "./footer";
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <main className="flex flex-col justify-between items-center place-content-center h-screen gap-x-8">
-      <Header />
-      <div className='flex flex-row items-center place-content-center gap-x-8 text-2xl'>
-        <div>
-          <button className="group relative grid overflow-hidden rounded-full px-4 py-1 shadow-[0_1000px_0_0_hsl(0_0%_20%)_inset] transition-colors duration-200">
-            <span>
-              <span className="spark mask-gradient animate-flip before:animate-rotate absolute inset-0 h-[100%] w-[100%] overflow-hidden rounded-full [mask:linear-gradient(white,_transparent_50%)] before:absolute before:aspect-square before:w-[200%] before:rotate-[-90deg] before:bg-[conic-gradient(from_0deg,transparent_0_340deg,white_360deg)] before:content-[''] before:[inset:0_auto_auto_50%] before:[translate:-50%_-15%]" />
-            </span>
-            <span className="backdrop absolute inset-[1px] rounded-full bg-black transition-colors duration-200 group-hover:bg-slate-800" />
-            <span className="text z-10 text-[#cbd5e1]">Picture of Me</span>
-          </button>
-        </div>
-        <div className='flex flex-col gap-y-3'>
-        <div>
-          <h1>
-          Hello, I am Ayush, welcome to my world!!
-          </h1>
-        </div>
-        <div>
-          Freelanccer and Ex-Associate 2 @ PwC
-        </div>
-        <ul className='gap-y-2'>
-          <li>👨‍💻 Tech Enthusiast</li>
-          <li>🌏 Based in India</li>
-          <li>☕️ Coffee Lover</li>
-          <li>📧 ayushkedia1990@gmail.com</li>
-        </ul>
-        <div className='flex flex-row gap-x-2'>
-          <Image src='/../public/linkedin.PNG' width={50} height={50} alt={'linkedin logo'} href='https://www.linkedin.com/in/cypherpoll0/' />
-          <Image src='/../public/github.PNG' width={50} height={50} alt={'github logo'} href='https://github.com/cypherpoll-0' />
-          <Image src='/../public/leetcode.PNG' width={50} height={50} alt={'leetcode logo'} href='https://github.com/cypherpoll-0' />
-          <Image src='/../public/instagram.PNG' width={50} height={50} alt={'instagram logo'} />
-        </div>
-        </div>
-        </div>
-        <Footer />
-    </main>
-  )
+	return (
+		<main className="flex flex-col justify-between items-center place-content-center h-screen gap-x-8 font-thin">
+			<Header />
+			<div className="flex flex-row items-center place-content-center gap-x-8 text-2xl">
+				<div>
+					<Image
+						src="/../public/portfolioPic.jpg"
+						width={500}
+						height={500}
+						className="border-2 bg-blend-normal rounded-full"
+					/>
+				</div>
+				<div className="flex flex-col gap-y-8">
+					<div className="font-mono font-extrabold text-3xl">
+						<h1>Hello, I am Ayush, welcome to my world!!</h1>
+					</div>
+					<div className="font-mono font-bold text-2xl">
+						Freelancer and Ex-Associate 2 @ PwC
+					</div>
+					<ul className="flex flex-col gap-y-2 font-light font-mono">
+						<li>👨‍💻 Tech Enthusiast</li>
+						<li>🌏 Based in India</li>
+						<li>☕️ Coffee Lover</li>
+						<li>📧 ayushkedia1990@gmail.com</li>
+					</ul>
+					<div className="flex flex-row gap-x-4">
+						<Link href="https://www.linkedin.com/in/cypherpoll0/">
+							<Image
+								src="/../public/linkedin.PNG"
+								width={50}
+								height={50}
+								alt={"linkedin logo"}
+							/>
+						</Link>
+						<Link href="https://github.com/cypherpoll-0">
+							<Image
+								src="/../public/github.PNG"
+								width={50}
+								height={50}
+								alt={"github logo"}
+							/>
+						</Link>
+						<Link href="https://leetcode.com/ayushkedia1990">
+							<Image
+								src="/../public/leetcode.PNG"
+								width={50}
+								height={50}
+								alt={"leetcode logo"}
+							/>
+						</Link>
+						<Link href="https://www.instagram.com/the_d.i.s.t.r.a.c.t.e.d_one/">
+							<Image
+								src="/../public/instagram.PNG"
+								width={50}
+								height={50}
+								alt={"instagram logo"}
+							/>
+						</Link>
+					</div>
+				</div>
+			</div>
+			<Footer />
+		</main>
+	);
 }
