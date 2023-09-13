@@ -27,9 +27,10 @@ export default function Projects() {
 		<main className="flex flex-col justify-start items-center place-content-center gap-y-8">
 			<Header />
 			<div className="flex flex-col gap-y-6 justify-start h-full place-content-center">
-				<div className="text-4xl place-content-center">
+				<div className="text-3xl place-content-center">
 					<p className="text-center">
-						Some of my personal works, please do check them out!
+						Some of my personal works, please do check them out! Will keep
+						adding more of these here...
 					</p>
 				</div>
 				<div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 ">
