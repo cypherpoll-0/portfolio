@@ -10,7 +10,7 @@ export default function Home() {
 			<div className="flex flex-row items-center place-content-center gap-x-8 text-2xl">
 				<div>
 					<Image
-						src="/../public/portfolioPic.jpg"
+						src="/../public/portfolioPic.JPG"
 						width={500}
 						height={500}
 						className="border-2 bg-blend-normal rounded-full"
