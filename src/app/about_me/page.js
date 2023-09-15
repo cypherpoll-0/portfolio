@@ -25,7 +25,7 @@ export default function AboutMe() {
 						This is supposed to be section 2 but I have barely experienced
 						anything in life having enterd the professional world for around 2
 						years, so I will keep updating this section let's see where life
-						takes me......
+						takes me...... and do connect with me on my social media.
 					</p>
 				</div>
 			</div>
