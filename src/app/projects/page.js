@@ -4,19 +4,19 @@ import Footer from "../footer";
 export default function Projects() {
 	const project_list = [
 		{
-			img: "/../public/images/project1.PNG",
+			img: "/images/project1.png",
 			name: "Paanika",
 			desc: "A Freelance E-commerce website I made for a client using React.",
 			link: "http://www.paanika.com/#/",
 		},
 		{
-			img: "/../public/images/project2.PNG",
+			img: "/images/project2.png",
 			name: "Amazone Clone",
 			desc: "A simple Amazon clone with auth and cart features i built during my college days to learn about React.",
 			link: "https://a-clone-486cd.web.app/",
 		},
 		{
-			img: "/../public/images/project3.PNG",
+			img: "/images/project3.png",
 			name: "Whatsapp Clone",
 			desc: "A simple Whatsapp clone with auth and live messaging features i built during my college days to learn about React and dynamic databases.",
 			link: "https://whatsappf-7753e.web.app/",

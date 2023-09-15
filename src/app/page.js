@@ -10,7 +10,7 @@ export default function Home() {
 			<div className="flex flex-row items-center place-content-center gap-x-8 text-2xl">
 				<div>
 					<Image
-						src="https://drive.google.com/file/d/1rfpTH5RNL585rAxITfpYny_qRDd4DJEr/view?usp=drive_link"
+						src="/images/portfolioPic.jpg"
 						width={500}
 						height={500}
 						className="border-2 bg-blend-normal rounded-full"
@@ -32,7 +32,7 @@ export default function Home() {
 					<div className="flex flex-row gap-x-4">
 						<Link href="https://www.linkedin.com/in/cypherpoll0/">
 							<Image
-								src="/../public/images/linkedin.PNG"
+								src="/images/linkedin.png"
 								width={50}
 								height={50}
 								alt={"linkedin logo"}
@@ -40,7 +40,7 @@ export default function Home() {
 						</Link>
 						<Link href="https://github.com/cypherpoll-0">
 							<Image
-								src="/../public/images/github.PNG"
+								src="/images/github.png"
 								width={50}
 								height={50}
 								alt={"github logo"}
@@ -48,7 +48,7 @@ export default function Home() {
 						</Link>
 						<Link href="https://leetcode.com/ayushkedia1990">
 							<Image
-								src="/../public/images/leetcode.PNG"
+								src="/images/leetcode.png"
 								width={50}
 								height={50}
 								alt={"leetcode logo"}
@@ -56,7 +56,7 @@ export default function Home() {
 						</Link>
 						<Link href="https://www.instagram.com/the_d.i.s.t.r.a.c.t.e.d_one/">
 							<Image
-								src="/../public/images/instagram.PNG"
+								src="/images/instagram.png"
 								width={50}
 								height={50}
 								alt={"instagram logo"}
