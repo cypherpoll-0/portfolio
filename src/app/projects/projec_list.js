@@ -23,4 +23,10 @@ export const project_list = [
 		desc: "A simple project that helps visualise the result of using throttling on an expensive function.",
 		link: "https://throttling-react.vercel.app",
 	},
+	{
+		img: "/images/project5.png",
+		name: "Debouncing Example",
+		desc: "A simple project that helps visualise the result of using debouncing on a search bar.",
+		link: "https://debouncinginreact.vercel.app/",
+	},
 ];
