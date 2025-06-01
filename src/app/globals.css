@@ -1,26 +1,95 @@
 @import "tailwindcss";
+@import "tailwindcss/preflight";
+@import "tailwindcss/utilities";
 
+/* ──────────────────────────────────────
+   CSS Variables
+   ──────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000013;           /* deep-space navy */
+  --foreground: #ffffff;
+  --font-sans: 'Segoe UI', Roboto, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* Respect light-mode users, just in case */
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a23;
+    --foreground: #ffffff;
   }
 }
 
+/* ──────────────────────────────────────
+   Global Element Resets
+   ──────────────────────────────────── */
+html,
 body {
-  background: var(--background);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow: hidden;               /* lock page scroll to the main container */
+}
+
+/* ──────────────────────────────────────
+   Vertical Snap Container (our <main>)
+   ──────────────────────────────────── */
+main {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;   /* one section at a time */
+}
+
+/* ──────────────────────────────────────
+   Sections
+   ──────────────────────────────────── */
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  /* transparent so the star-field shows through */
+  background: transparent;
+}
+
+/* ──────────────────────────────────────
+   Utility Animations
+   ──────────────────────────────────── */
+
+/* Floating avatar / planets */
+@keyframes float {
+  0%, 100% { transform: translateY(-4%); }
+  50%      { transform: translateY( 4%); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slow vertical drift for the CSS-star backdrop (Canvas gets its own) */
+@keyframes slowMove {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10%); }
+}
+.animate-slowMove {
+  animation: slowMove 60s linear infinite;
+}
+
+/* ──────────────────────────────────────
+   Optional low-opacity fallback star layer
+   (safe even with the three-js canvas)
+   ──────────────────────────────────── */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -20;
+  pointer-events: none;
+  background: url('/stars.png') repeat;
+  opacity: 0.1;
 }
