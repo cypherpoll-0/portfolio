@@ -1,35 +1,55 @@
 'use client';
 import { motion } from 'framer-motion';
-import { sectionMotion } from '@/hooks/useSectionMotion';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="h-full flex flex-col items-center justify-center text-center px-4 space-y-6">
-      <motion.img
-        src='/profile.jpeg'
-        alt="Profile"
-        className="h-36 w-36 rounded-full border-4 border-indigo-500 shadow-xl animate-float prose prose-invert max-w-3xl text-center"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        {...sectionMotion}
-      />
-      <motion.h1
-        className="text-5xl md:text-6xl font-extrabold tracking-wide bg-gradient-to-br from-indigo-400 via-purple-500 to-pink-500 text-transparent bg-clip-text drop-shadow-lg"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 1 }}
+    <section className="flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-12 space-y-12">
+      <motion.div
+        whileHover={{ scale: 1.05 }}
+        className="rounded-full overflow-hidden border-4 border-[#23D4FF] w-48 h-48 md:w-60 md:h-60 shadow-lg"
       >
-        Hi, I’m [Your Name]
-      </motion.h1>
-      <motion.p
-        className="text-xl text-indigo-200 max-w-xl"
+        <Image
+          src="/profile.jpeg"
+          alt="Profile"
+          width={240}
+          height={240}
+          className="object-cover w-full h-full"
+          priority
+        />
+      </motion.div>
+      <br />
+      <br />
+      <motion.h1
+        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight max-w-4xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 1 }}
+        transition={{ delay: 0.2 }}
       >
-        Frontend Developer · Space Enthusiast · UI/UX Explorer ✨
+        Full Stack&nbsp;
+        <span className="text-[#23D4FF]">Web Developer</span>
+        &nbsp;helping products launch faster. 🚀
+      </motion.h1>
+  
+      <motion.p
+        className="max-w-2xl text-lg md:text-xl text-[#9FA2B6] leading-relaxed"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3 }}
+      >
+        I design and build high-performance web apps using React, Node.js, and PostgreSQL — optimized for speed, scale, and seamless user experience.
       </motion.p>
+      <br />
+      <motion.a
+        href="#projects"
+        className="inline-flex items-center justify-center px-16 py-5 text-xl md:text-2xl font-semibold bg-[#23D4FF] text-black rounded-xl hover:bg-[#43dcff] transition duration-300 shadow-lg"
+        whileHover={{ scale: 1.05 }}
+        transition={{ type: 'spring', stiffness: 300 }}
+      >
+        <div className='px-12'>
+          View Projects
+        </div>
+      </motion.a>
     </section>
   );
 }

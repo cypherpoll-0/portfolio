@@ -2,16 +2,12 @@
 @import "tailwindcss/preflight";
 @import "tailwindcss/utilities";
 
-/* ──────────────────────────────────────
-   CSS Variables
-   ──────────────────────────────────── */
 :root {
-  --background: #000013;           /* deep-space navy */
+  --background: #000013;
   --foreground: #ffffff;
   --font-sans: 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Respect light-mode users, just in case */
 @media (prefers-color-scheme: light) {
   :root {
     --background: #0a0a23;
@@ -19,9 +15,6 @@
   }
 }
 
-/* ──────────────────────────────────────
-   Global Element Resets
-   ──────────────────────────────────── */
 html,
 body {
   height: 100%;
@@ -31,21 +24,15 @@ body {
   background: radial-gradient(ellipse at center, #000010 0%, #000000 100%);
   color: var(--foreground);
   font-family: var(--font-sans);
-  overflow: hidden;               /* lock page scroll to the main container */
+  overflow: hidden;
 }
 
-/* ──────────────────────────────────────
-   Vertical Snap Container (our <main>)
-   ──────────────────────────────────── */
 main {
   height: 100vh;
   overflow-y: scroll;
-  scroll-snap-type: y mandatory;   /* one section at a time */
+  scroll-snap-type: y mandatory;
 }
 
-/* ──────────────────────────────────────
-   Sections
-   ──────────────────────────────────── */
 section {
   height: 100vh;
   scroll-snap-align: start;
@@ -54,36 +41,25 @@ section {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  /* transparent so the star-field shows through */
   background: transparent;
 }
 
-/* ──────────────────────────────────────
-   Utility Animations
-   ──────────────────────────────────── */
-
-/* Floating avatar / planets */
 @keyframes float {
   0%, 100% { transform: translateY(-4%); }
-  50%      { transform: translateY( 4%); }
+  50% { transform: translateY(4%); }
 }
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
-/* Slow vertical drift for the CSS-star backdrop (Canvas gets its own) */
 @keyframes slowMove {
   from { transform: translateY(0); }
-  to   { transform: translateY(-10%); }
+  to { transform: translateY(-10%); }
 }
 .animate-slowMove {
   animation: slowMove 60s linear infinite;
 }
 
-/* ──────────────────────────────────────
-   Optional low-opacity fallback star layer
-   (safe even with the three-js canvas)
-   ──────────────────────────────────── */
 body::before {
   content: "";
   position: fixed;
@@ -92,4 +68,29 @@ body::before {
   pointer-events: none;
   background: url('/stars.png') repeat;
   opacity: 0.1;
+}
+
+.scroll-section {
+  scroll-snap-align: start;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+  background-size: 120px 120px;
+}
+
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+}
+
+::selection {
+  background: #23d4ff33;
 }

@@ -1,43 +1,31 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-const sections = ['hero', 'about', 'projects', 'contact'];
+// const sections = ['hero','about','experience','projects','contact'];
+const sections = ["hero", "about", "skills", "experience", "projects", "contact"];
+
 
 export default function NavDots() {
   const [active, setActive] = useState('hero');
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-            break;
-          }
-        }
-      },
-      { threshold: 0.6 }
-    );
-
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+  useEffect(()=>{
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting) setActive(e.target.id); });
+    },{threshold:0.6});
+    sections.forEach(id=>{
+      const el=document.getElementById(id); if(el) obs.observe(el);
     });
-
-    return () => observer.disconnect();
-  }, []);
+    return ()=>obs.disconnect();
+  },[]);
 
   return (
-    <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 space-y-4">
-      {sections.map((sec) => (
-        <a
-          key={sec}
-          href={`#${sec}`}
-          className={`block w-3 h-3 rounded-full transition-all duration-300 ${
-            active === sec ? 'bg-indigo-400 scale-125' : 'bg-gray-600'
-          }`}
-        ></a>
+    <nav className="fixed right-6 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-30">
+      {sections.map(id=>(
+        <a key={id} href={`#${id}`} className="group">
+          <span className={`block h-3 w-3 rounded-full transition
+            ${active===id?'bg-[#23D4FF] scale-125':'bg-[#3A3D54]'}`}/>
+        </a>
       ))}
-    </div>
+    </nav>
   );
 }

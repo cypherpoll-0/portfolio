@@ -21,7 +21,10 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['"IBM Plex Sans"', 'ui-sans-serif', 'system-ui'],
+        sans: ['"Space Grotesk"', 'Inter', 'sans-serif'],
+      },
+      colors: {
+        cyanAccent: '#00e0ff',
       },
       screens: {
         xs: '390px', // iPhone 12 mini
