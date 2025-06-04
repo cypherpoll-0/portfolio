@@ -53,7 +53,7 @@ export default function Projects() {
         My Projects
       </motion.h2>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full">
+      <div className="grid grid-cols-2 md:grid-cols-2 gap-10 max-w-5xl w-full">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
