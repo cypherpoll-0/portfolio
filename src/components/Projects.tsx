@@ -52,18 +52,18 @@ export default function Projects() {
       >
         My Projects
       </motion.h2>
-      <br />
+      
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl w-full">
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            className="bg-[#111827] p-6 rounded-2xl border border-blue-500/30 shadow-md hover:shadow-blue-500/40 transition hover:scale-[1.02] flex flex-col justify-between"
+            className="bg-[#111827] p-2 rounded-2xl border border-blue-500/30 shadow-md hover:shadow-blue-500/40 transition hover:scale-[1.02] flex flex-col justify-between gap-2"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: idx * 0.2 }}
             viewport={{ once: true }}
           >
-            <div>
+            <div className="flex flex-col p-2">
               <h3 className="text-xl font-semibold text-white">{project.title}</h3>
               <p className="text-sm text-gray-400 mt-2">{project.description}</p>
             </div>
@@ -71,7 +71,7 @@ export default function Projects() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-block px-6 py-3 rounded-md bg-[#23D4FF] text-black font-semibold text-sm hover:bg-[#43dcff] transition"
+              className="inline-block px-6 py-2.5 rounded-md bg-[#23D4FF] text-black font-semibold text-sm hover:bg-[#43dcff] transition"
             >
               View Project
             </a>

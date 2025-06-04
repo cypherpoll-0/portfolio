@@ -24,16 +24,16 @@ const companies = [
 
 export default function Experience() {
   return (
-    <div className="flex flex-col items-center text-center space-y-8">
+    <div className="flex flex-col items-center text-center space-y-3">
       <h2 className="text-3xl font-semibold">Professional Experience</h2>
-      <br />
-      <br />
-      <div className="flex flex-col gap-7 w-full max-w-3xl">
+      
+      
+      <div className="flex flex-col gap-3.5 w-full max-w-3xl">
         {companies.map((c) => (
           <motion.div
             key={c.name}
             whileHover={{ y: -4 }}
-            className="bg-[#0C0C1A] border border-white/10 rounded-lg px-6 py-5 space-y-2 text-center"
+            className="bg-[#0C0C1A] border border-white/10 rounded-lg px-6 py-2 space-y-2 text-center"
           >
             <div className="text-xl font-semibold text-white">{c.name}</div>
             <div className="text-sm text-[#9FA2B6]">{c.role} • {c.years}</div>

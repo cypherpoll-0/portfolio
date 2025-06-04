@@ -45,7 +45,7 @@ const skills = [
 
 export default function Skills() {
     return (
-        <section className="w-full max-w-6xl mx-auto text-center space-y-16 px-6 py-16">
+        <section className="w-full max-w-6xl mx-auto text-center space-y-6 px-6 py-2">
             <motion.h2
                 className="text-4xl font-bold"
                 initial={{ opacity: 0, y: 40 }}
@@ -54,12 +54,12 @@ export default function Skills() {
             >
                 Skills & Technologies
             </motion.h2>
-            <br />
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6">
                 {skills.map((section) => (
                     <motion.div
                         key={section.category}
-                        className="bg-[#0C0C1A] border border-white/10 rounded-xl p-6 text-left space-y-4"
+                        className="bg-[#0C0C1A] border border-white/10 rounded-xl p-2 text-left space-y-2"
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.4 }}
@@ -67,7 +67,7 @@ export default function Skills() {
                         <h3 className="text-xl font-semibold text-[#23D4FF]">
                             {section.category}
                         </h3>
-                        <ul className="list-disc list-inside text-[#c3c7e5] space-y-2">
+                        <ul className="list-disc list-inside text-[#c3c7e5] space-y-0.5">
                             {section.items.map((item) => (
                                 <li key={item}>{item}</li>
                             ))}

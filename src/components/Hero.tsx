@@ -4,13 +4,13 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="flex flex-col items-center justify-center text-center min-h-screen px-6 md:px-12 space-y-12">
+    <section className="flex flex-col items-center justify-center text-center px-6 md:px-12 space-y-12">
       <motion.div
         whileHover={{ scale: 1.05 }}
         className="rounded-full overflow-hidden border-4 border-[#23D4FF] w-48 h-48 md:w-60 md:h-60 shadow-lg"
       >
         <Image
-          src="/profile.jpeg"
+          src="/profile.png"
           alt="Profile"
           width={240}
           height={240}
@@ -18,10 +18,10 @@ export default function Hero() {
           priority
         />
       </motion.div>
-      <br />
-      <br />
+      
+      
       <motion.h1
-        className="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight max-w-4xl"
+        className="text-2xl md:text-3xl lg:text-4xl font-extrabold leading-tight max-w-4xl"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -39,14 +39,14 @@ export default function Hero() {
       >
         I design and build high-performance web apps using React, Node.js, and PostgreSQL — optimized for speed, scale, and seamless user experience.
       </motion.p>
-      <br />
+      
       <motion.a
         href="#projects"
-        className="inline-flex items-center justify-center px-16 py-5 text-xl md:text-2xl font-semibold bg-[#23D4FF] text-black rounded-xl hover:bg-[#43dcff] transition duration-300 shadow-lg"
-        whileHover={{ scale: 1.05 }}
+        className="inline-flex items-center justify-center px-8 py-4 text-xl md:text-2xl font-semibold bg-[#23D4FF] text-black rounded-xl hover:bg-[#43dcff] transition duration-300 shadow-lg"
+        whileHover={{ scale: 1.1 }}
         transition={{ type: 'spring', stiffness: 300 }}
       >
-        <div className='px-12'>
+        <div>
           View Projects
         </div>
       </motion.a>
